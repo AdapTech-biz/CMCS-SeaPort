@@ -1,0 +1,83 @@
+// File: .\PopulatedData\test4.txt
+// Data file for SeaPort projects
+// Date: Mon Jan 15 16:32:05 EST 2018
+// parameters: 1 5 13 7 3 10
+//   ports, docks, pships, cships, jobs, persons
+
+// port   name index parent(null)
+//    port   <string> <int> <int>
+port Zabaykalsk 10000 0
+
+// dock   name index parent(port)
+//    dock   <string> <int> <int>
+  dock Pier_0 20000 10000 30000
+  dock Pier_6 20006 10000 30006
+  dock Pier_1 20001 10000 30001
+  dock Pier_3 20003 10000 30003
+  dock Pier_2 20002 10000 30002
+  dock Pier_4 20004 10000 30004
+  dock Pier_5 20005 10000 30005
+
+// pship  name index parent(dock/port) weight length width draft numPassengers numRooms numOccupied
+//    pship  <string> <int> <int> <double> <double> <double> <double> <int> <int> <int>
+    pship           Outtrumped 30002 20002 119.27 250.02 63.57 23.44 74 316 37
+    pship           Scattering 30001 20001 76.63 402.83 83.85 44.72 1504 657 657
+    pship              Panther 30008 10000 50.65 325.46 96.56 32.94 267 108 108
+    pship        Subsidization 30006 20006 138.03 488.49 79.49 22.04 2222 1073 1073
+    pship             Skylarks 30011 10000 217.14 379.92 38.33 40.49 1222 534 534
+    pship          Chlorinated 30009 10000 103.30 382.73 123.23 41.10 132 968 66
+    pship            Deposable 30007 10000 70.88 392.87 74.57 19.01 2274 916 916
+    pship              Jeepers 30010 10000 103.53 161.56 125.08 39.91 1060 432 432
+    pship            Prewarned 30003 20003 51.27 435.28 47.20 28.43 966 840 483
+    pship            Extorting 30004 20004 89.20 285.14 64.02 40.59 665 517 332
+    pship               Arrant 30005 20005 196.20 268.31 122.69 16.75 1035 991 517
+    pship          Backspacing 30012 10000 196.16 129.63 73.99 41.76 3795 1083 1083
+    pship               Teuton 30000 20000 114.55 333.58 46.53 26.29 1522 916 761
+
+// cship  name index parent(dock/port) weight length width draft cargoWeight cargoVolume cargoValue
+//    cship  <string> <int> <int> <double> <double> <double> <double> <double> <double> <double>
+    cship            Cribworks 40003 10000 96.31 227.63 43.49 40.58 23.34 186.72 25.75
+    cship               Eggnog 40005 10000 205.93 327.34 86.07 19.32 64.30 148.36 733.33
+    cship               Ponder 40006 10000 104.71 270.71 81.31 28.70 137.72 102.72 951.68
+    cship           Nihilities 40000 10000 120.08 264.89 127.73 32.47 167.51 199.36 1003.79
+    cship              Letting 40001 10000 76.08 406.93 86.29 15.09 24.21 159.82 800.91
+    cship               Bindle 40002 10000 65.05 458.05 93.35 22.52 71.45 100.24 835.06
+    cship            Scantiest 40004 10000 55.94 170.96 65.66 18.52 59.44 123.04 184.69
+
+// person name index parent skill
+//    person <string> <int> <int> <string>
+    person                 Clay 50004 10000 captain
+    person                 Ruby 50006 10000 craneOperator
+    person                Erika 50008 10000 captain
+    person                Damon 50001 10000 crew
+    person                Jason 50007 10000 clerk
+    person               Silvia 50002 10000 driver
+    person              Bethany 50003 10000 engineer
+    person               Willie 50000 10000 craneOperator
+    person             Jermaine 50005 10000 stevedore
+    person                 Beth 50009 10000 electrician
+
+// job    name index parent duration [skill]+ (one or more, matches skill in person, may repeat)
+//    job    <string> <int> <int> <double> [<string>]+
+    job         Job_21_19_20 60017 30011 40.99 inspector
+    job         Job_34_64_78 60015 30010 97.91 captain craneOperator
+    job         Job_82_61_81 60004 30002 118.76 inspector
+    job         Job_51_51_60 60014 30009 49.12 electrician
+    job         Job_66_35_70 60001 30000 66.87 cleaner
+    job         Job_78_56_46 60009 30006 64.30 engineer
+    job         Job_86_58_90 60012 30008 117.65 cleaner
+    job         Job_86_86_33 60000 30000 27.09 cleaner
+    job         Job_71_52_46 60021 40004 49.38 painter
+    job         Job_11_20_83 60003 30002 24.57
+    job         Job_44_35_78 60008 30005 60.37
+    job         Job_26_64_35 60019 40003 29.79 painter clerk
+    job         Job_82_43_62 60005 30003 116.98
+    job         Job_37_20_50 60006 30003 71.96 clerk cleaner
+    job         Job_72_63_37 60007 30005 92.83 carpenter mate crew
+    job         Job_24_27_70 60011 30008 65.45 engineer inspector
+    job         Job_51_85_32 60016 30010 76.77 mate mechanic
+    job         Job_63_71_29 60002 30001 79.38
+    job         Job_38_98_64 60013 30009 97.96 inspector
+    job         Job_78_18_28 60018 40000 45.63
+    job         Job_42_78_48 60010 30007 107.36 mate painter
+    job         Job_66_15_14 60020 40004 52.87 crew
