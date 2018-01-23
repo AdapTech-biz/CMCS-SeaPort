@@ -1,5 +1,9 @@
 import java.util.Scanner;
 
+/** A parent class Ship, CargoShip, PassengerShip, Dock and Person.java.
+ * Thing.java contains information on the object’s name, index value
+ * and index of the parent object.*/
+
 public class Thing implements Comparable<Thing> {
     private int index, parent;
     private String name;
@@ -11,44 +15,22 @@ public class Thing implements Comparable<Thing> {
     }
 
     public Thing(Scanner scanner) {
-//        scanner.useDelimiter("\\S");
         this.name = scanner.next();
         this.index = scanner.nextInt();
         this.parent = scanner.nextInt();
     }
 
+    /** returns index*/
     public int getIndex(){
         return this.index;
     }
-
+    /** returns parent's index*/
     public int getParent(){
         return this.parent;
     }
-
+    /** returns name*/
     public String getName(){
         return this.name;
-    }
-
-    @Override
-    public int hashCode() {
-        System.out.println("hashcode called");
-        return this.name.hashCode() + 57;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if(this == obj) {
-            return true;
-        }
-
-        System.out.println("obj.getClass() is " + obj.getClass());
-        System.out.println("this.getClass() is " + this.getClass());
-        if ((obj == null) || (obj.getClass() != this.getClass())) {
-            return false;
-        }
-
-        String objName = ((Thing) obj).getName();
-        return this.name.equals(objName);
     }
 
     @Override
@@ -56,12 +38,14 @@ public class Thing implements Comparable<Thing> {
         return this.name;
     }
 
+    /** method call to format search results of thing objects -- parent class adds
+     * list separator to end of each search result*/
     public String formatPrint(){
         return "\n--------------------------------------------------";
     }
 
     @Override
     public int compareTo(Thing o) {
-        return this.name.compareTo(o.name);
+        return this.name.compareTo(o.getName());
     }
 }

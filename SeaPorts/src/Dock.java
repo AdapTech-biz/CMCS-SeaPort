@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/** Class represents an individual dock located within a SeaPort.
+ * Contains a getter and setter for a ship assigned to the Dock object.*/
+
 public class Dock extends Thing {
     private Ship ship;
 
@@ -7,18 +10,17 @@ public class Dock extends Thing {
         super(scanner);
     }
 
-    public int getIndex(){
-       return super.getIndex();
-    }
-
+    /** Set Ship to dock*/
     public void setShip(Ship ship) {
         this.ship = ship;
     }
 
+    /** returns Ship currently docked*/
     public Ship getShip() {
         return ship;
     }
 
+    /** Formats the search result display for Dock objects */
     public String formatPrint(){
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Index:");

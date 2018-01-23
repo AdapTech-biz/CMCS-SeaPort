@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/** A parent class for the classes CargoShip and PassengerShip. Class contains the basic
+ * information about the ship’s dimensions, port times, and a list of jobs
+ * associated with the Ship object.*/
+
 public class Ship extends Thing {
     private PortTime arrivalTime, dockTime;
     private double draft, length, weight, width;
@@ -28,14 +32,7 @@ public class Ship extends Thing {
         return new ArrayList<>(jobs);
     }
 
-    public int getParent(){
-        return super.getParent();
-    }
-
-    public int getIndex(){
-       return super.getIndex();
-    }
-
+    /** Formats the search result display for Ship objects */
     @Override
     public String formatPrint() {
         StringBuilder builder = new StringBuilder();
@@ -52,22 +49,13 @@ public class Ship extends Thing {
         builder.append("\n\t");
         builder.append(this.weight);
         builder.append("\nJobs:");
-        for (Job job : jobs){
+        for (Job job : jobs){   //loops through all jobs to be listed in result display
             builder.append("\n\t");
             builder.append(job.toString());
         }
 
-        builder.append(super.formatPrint());
+        builder.append(super.formatPrint());    //adds separator to end of result display
         return builder.toString();
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
 }

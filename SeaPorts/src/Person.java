@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+/** Object for individuals located within a SeaPort. Each person extends Thing.java to contain a skill.*/
+
 public class Person extends Thing {
     private String skill;
 
@@ -15,6 +17,7 @@ public class Person extends Thing {
         return this.skill;
     }
 
+    /** Formats the search result display for Person objects */
     public String formatPrint(){
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Index:");
@@ -26,9 +29,6 @@ public class Person extends Thing {
         stringBuilder.append("\nSkill:");
         stringBuilder.append("\n\t");
         stringBuilder.append(getSkill());
-        stringBuilder.append("\nSea Port:");
-        stringBuilder.append("\n\t");
-        //add sea port in World class;
         stringBuilder.append(super.formatPrint());
         return stringBuilder.toString();
     }
