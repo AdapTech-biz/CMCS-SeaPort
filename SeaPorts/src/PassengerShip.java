@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/** A child class of the Ship class. Extends the parent class to contain characteristics
+ * of a passenger ship (number of passengers and rooming information). */
+
 public class PassengerShip extends Ship {
     private int numberOfOccupiedRooms;
     private int numberOfPassengers;
@@ -17,6 +20,7 @@ public class PassengerShip extends Ship {
             this.numberOfOccupiedRooms = scanner.nextInt();
     }
 
+    /** Formats the search result display for Passenger Ship objects */
     public String formatPrint(){
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Index:");
@@ -37,6 +41,7 @@ public class PassengerShip extends Ship {
         stringBuilder.append(super.formatPrint());
         return stringBuilder.toString();
     }
+
     @Override
     public String toString() {
         String st = "Passenger ship: " + super.toString();

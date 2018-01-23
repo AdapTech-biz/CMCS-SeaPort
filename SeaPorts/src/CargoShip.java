@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/** A child class of the Ship class. Extends the parent class to contain characteristics
+ * of a container ship (cargo weight, volume, and value). */
+
 public class CargoShip extends Ship{
     private double cargoValue;
     private double cargoVolume;
@@ -18,6 +21,7 @@ public class CargoShip extends Ship{
             this.cargoValue = scanner.nextDouble();
     }
 
+    /** Formats the search result display for Cargo Ship objects */
     public String formatPrint(){
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Index:");

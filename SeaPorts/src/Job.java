@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**Each Job contains a list of required skills and a total time
+ * duration for the Job’s completion. Class extends Thing.java.*/
 public class Job extends Thing {
     private double duration;
     private ArrayList<String> requirements; //should be some of the skill of the person
@@ -14,9 +16,17 @@ public class Job extends Thing {
         while (scanner.hasNext()){
             this.requirements.add(scanner.next());
         }
-//        System.out.println("Job Reqs..." + requirements);
     }
 
+    /** Scans the job requirements to see if a requested skill is present in list*/
+    public boolean searchRequirements(String skill){
+        skill = skill.trim().toLowerCase();
+        if (requirements.size() == 0 && skill.isEmpty() || requirements.size() == 0 && skill.equalsIgnoreCase("none"))
+            return true;
+        return requirements.contains(skill);
+    }
+
+    /** Formats the search result display for Job objects */
     public String formatPrint(){
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Index:");
@@ -29,6 +39,8 @@ public class Job extends Thing {
         stringBuilder.append("\n\t");
         stringBuilder.append(this.duration);
         stringBuilder.append("\nJob Requirements:");
+        if (requirements.size() == 0)
+            stringBuilder.append("\n\tNo Specific Skill Requirements!");
         for (String requirement : requirements){
             stringBuilder.append("\n\t");
             stringBuilder.append(requirement);
